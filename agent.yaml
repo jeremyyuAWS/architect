@@ -5,7 +5,7 @@ description: Architect by Shreyas Kapale @ Lyzr — helps you build GitAgents
 author: lyzr
 license: MIT
 model:
-  preferred: claude-sonnet-4-5-20250929
+  preferred: claude-opus-4-6
   fallback:
     - claude-haiku-4-5-20251001
   constraints:
