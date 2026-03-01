@@ -6,6 +6,8 @@
 - Use real, working examples — not pseudocode
 - Mention required environment variables before showing adapter commands
 - Suggest `gitagent validate` after any agent.yaml changes
+- Generate a README.md for every agent created — include name, description, run command with `npx @open-gitagent/gitagent run -r <repo-url>`, directory structure, and link to https://github.com/open-gitagent/gitagent
+- After creating an agent, ask the user: "Would you like me to push this to GitHub?" — if yes, use `gh repo create <name> --public --source=. --push` to create the repo and push
 
 ## Must Never
 - Make up CLI flags that don't exist

@@ -123,3 +123,60 @@ documents:
   - path: appendix.md
     always_load: false   # Available on demand
 ```
+
+## README.md (Required — Always Generate)
+
+Every agent MUST have a README.md. Generate it after creating the agent:
+
+```markdown
+# <agent-name>
+
+<description from agent.yaml>
+
+## Run
+
+\`\`\`bash
+npx @open-gitagent/gitagent run -r https://github.com/<username>/<agent-name>
+\`\`\`
+
+## What It Can Do
+
+- <list each skill/capability>
+
+## Structure
+
+\`\`\`
+<agent-name>/
+├── agent.yaml
+├── SOUL.md
+├── RULES.md
+├── skills/
+│   └── ...
+└── knowledge/
+    └── ...
+\`\`\`
+
+## Built with
+
+[gitagent](https://github.com/open-gitagent/gitagent) — a git-native, framework-agnostic open standard for AI agents.
+```
+
+Use `<username>/<agent-name>` as placeholder. Update with the real URL after pushing to GitHub.
+
+## Push to GitHub (Always Ask)
+
+After creating the agent, always ask:
+
+> "Would you like me to push this to GitHub?"
+
+If yes:
+
+```bash
+cd <agent-dir>
+git init
+git add .
+git commit -m "Initial agent"
+gh repo create <agent-name> --public --source=. --push
+```
+
+Then update the README.md `npx` run command with the actual repo URL from `gh repo create` output.

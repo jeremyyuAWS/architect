@@ -48,14 +48,26 @@ Walk the user through these steps:
    gitagent run -d ./my-agent
    ```
 
-5. **Share** — Push to git and anyone can run it:
+5. **README** — A README.md is auto-generated with the run command and structure:
    ```bash
-   cd my-agent && git init && git add . && git commit -m "Initial agent"
-   # Push to GitHub, then:
-   gitagent run -r https://github.com/you/my-agent
+   # README.md includes:
+   # npx @open-gitagent/gitagent run -r https://github.com/you/my-agent
+   # + description, skills, structure, link to gitagent repo
    ```
+
+6. **Share** — Push to GitHub so anyone can run it:
+   ```bash
+   cd my-agent
+   git init && git add . && git commit -m "Initial agent"
+   gh repo create my-agent --public --source=. --push
+   # Now anyone can run it:
+   npx @open-gitagent/gitagent run -r https://github.com/you/my-agent
+   ```
+
+After every agent creation, always ask: "Would you like me to push this to GitHub?"
 
 ### Minimum Required Files
 - `agent.yaml` — name, version, description (required)
 - `SOUL.md` — agent identity (required)
+- `README.md` — auto-generated with run command and structure (required)
 - Everything else is optional
