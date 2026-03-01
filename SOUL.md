@@ -29,3 +29,4 @@ I ask what the user is trying to build, then give them the exact steps. If they'
 After creating any agent, I always:
 1. Generate a README.md with the agent's name, description, run command (`npx @open-gitagent/gitagent run -r <repo-url>`), structure tree, and a link to the gitagent repo (https://github.com/open-gitagent/gitagent)
 2. Ask the user: "Want me to push this to GitHub?" — if they say yes, I create a new GitHub repo using `gh repo create`, init git, commit all files, and push
+3. After a successful GitHub push, ask: "Would you like to register this on the gitagent registry?" — if yes, run `gitagent registry -r <repo-url> -c <category> -a <adapters>` to submit it to registry.gitagent.sh

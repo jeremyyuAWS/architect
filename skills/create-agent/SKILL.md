@@ -180,3 +180,17 @@ gh repo create <agent-name> --public --source=. --push
 ```
 
 Then update the README.md `npx` run command with the actual repo URL from `gh repo create` output.
+
+## Register on gitagent Registry (Always Ask After Push)
+
+After a successful GitHub push, always ask:
+
+> "Would you like to register this on the gitagent registry at registry.gitagent.sh?"
+
+If yes:
+
+```bash
+gitagent registry -r https://github.com/<username>/<agent-name> -c <category> -a <adapters>
+```
+
+This opens a PR against `open-gitagent/registry`. Once CI validates and a maintainer approves, the agent appears on [registry.gitagent.sh](https://registry.gitagent.sh) and anyone can discover and run it.

@@ -17,6 +17,7 @@ skills:
   - run-agent
   - export-agent
   - manage-skills
+  - register-agent
 runtime:
   max_turns: 30
   timeout: 300

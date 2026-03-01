@@ -66,6 +66,14 @@ Walk the user through these steps:
 
 After every agent creation, always ask: "Would you like me to push this to GitHub?"
 
+7. **Register** — After pushing to GitHub, register on the gitagent registry:
+   ```bash
+   gitagent registry -r https://github.com/you/my-agent -c developer-tools
+   # Opens a PR → CI validates → maintainer approves → live on registry.gitagent.sh
+   ```
+
+After every successful GitHub push, always ask: "Would you like to register this on the gitagent registry?"
+
 ### Minimum Required Files
 - `agent.yaml` — name, version, description (required)
 - `SOUL.md` — agent identity (required)
