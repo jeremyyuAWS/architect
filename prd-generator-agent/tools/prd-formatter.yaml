@@ -1,0 +1,22 @@
+name: prd-formatter
+description: Format and validate PRD documents ensuring correct structure, word counts, and section completeness
+input_schema:
+  type: object
+  properties:
+    prd_content:
+      type: string
+      description: Raw PRD content in markdown format
+    output_format:
+      type: string
+      enum:
+        - markdown
+        - json
+        - html
+      description: Desired output format
+      default: markdown
+    validate:
+      type: boolean
+      description: Whether to run validation checks
+      default: true
+  required:
+    - prd_content

@@ -1,0 +1,7 @@
+documents:
+  - path: prd-template.md
+    always_load: true
+  - path: lyzr-architect-reference.md
+    always_load: false
+  - path: lyzr-platform-capabilities.md
+    always_load: true

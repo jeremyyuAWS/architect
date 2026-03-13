@@ -1,0 +1,36 @@
+name: gamma-export
+description: Format slide content for Gamma import, supporting text paste and structured outline modes
+input_schema:
+  type: object
+  properties:
+    slides:
+      type: array
+      description: Array of slide objects with title, content, and speaker notes
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+          content:
+            type: string
+          speaker_notes:
+            type: string
+          visual_suggestion:
+            type: string
+        required:
+          - title
+          - content
+    deck_type:
+      type: string
+      enum:
+        - customer-story
+        - solution-pitch
+        - product-demo
+      description: Type of deck to generate
+    theme:
+      type: string
+      description: Visual theme suggestion for Gamma
+      default: professional
+  required:
+    - slides
+    - deck_type

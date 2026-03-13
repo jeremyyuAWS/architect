@@ -1,0 +1,26 @@
+name: web-analyzer
+description: Fetch and analyze web pages to extract structured content, metadata, and product intelligence
+input_schema:
+  type: object
+  properties:
+    url:
+      type: string
+      description: The URL to analyze
+    depth:
+      type: integer
+      description: How many levels of links to follow (1-3)
+      default: 1
+    extract:
+      type: array
+      items:
+        type: string
+        enum:
+          - products
+          - pricing
+          - team
+          - integrations
+          - blog
+          - documentation
+      description: Specific page types to prioritize
+  required:
+    - url

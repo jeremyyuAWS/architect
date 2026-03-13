@@ -1,0 +1,131 @@
+spec_version: "0.1.0"
+name: prd-generator-agent
+version: 1.0.0
+description: >
+  AI Product Manager that transforms websites, product ideas, or company descriptions
+  into comprehensive engineering-ready Product Requirements Documents (PRDs).
+  Orchestrates research, AI opportunity mapping, architecture design, and Lyzr agent
+  specification to produce 3,000–6,000 word PRDs with structured JSON for Lyzr Architect
+  and Gamma-ready slide decks for customer stories and solution pitches.
+  Also analyzes any website for Lyzr platform fit, scoring departments and workflows
+  against Lyzr's pre-built agents and recommending deployment strategies.
+
+model:
+  preferred: claude-sonnet-4-5-20250929
+  fallback:
+    - claude-haiku-4-5-20251001
+  constraints:
+    temperature: 0.3
+    max_tokens: 8192
+    top_p: 0.9
+
+skills:
+  - website-research
+  - product-discovery
+  - competitive-analysis
+  - ai-opportunity-mapping
+  - system-architecture-design
+  - lyzr-agent-design
+  - prd-writer
+  - prd-reviewer
+  - architect-output-generator
+  - gamma-deck-generator
+  - lyzr-fit-analyzer
+  - lyzr-use-case-recommender
+  - lyzr-competitor-benchmarker
+  - lyzr-roi-calculator
+  - lyzr-migration-planner
+  - industry-compliance-mapper
+  - demo-script-generator
+  - integration-mapper
+  - executive-summary-generator
+  - multi-agent-workflow-designer
+  - lyzr-onboarding-planner
+
+tools:
+  - web-analyzer
+  - prd-formatter
+  - gamma-export
+
+runtime:
+  max_turns: 30
+  timeout: 300
+
+agents:
+  researcher:
+    description: Performs website analysis and product intelligence gathering
+    delegation:
+      mode: auto
+      triggers:
+        - "analyze website"
+        - "research company"
+  architect:
+    description: Designs system and agent architecture
+    delegation:
+      mode: auto
+      triggers:
+        - "design architecture"
+        - "define agents"
+  writer:
+    description: Generates and reviews the final PRD document
+    delegation:
+      mode: auto
+      triggers:
+        - "write PRD"
+        - "generate document"
+  presenter:
+    description: Creates Gamma slide decks for customer stories and pitches
+    delegation:
+      mode: auto
+      triggers:
+        - "create deck"
+        - "customer story"
+        - "pitch deck"
+        - "slides"
+  lyzr-analyst:
+    description: Analyzes websites for Lyzr platform fit and generates deployment recommendations
+    delegation:
+      mode: auto
+      triggers:
+        - "analyze for Lyzr"
+        - "Lyzr fit"
+        - "fit analysis"
+        - "recommend agents"
+        - "Lyzr assessment"
+  finance-analyst:
+    description: Calculates ROI, TCO, and financial impact for Lyzr deployments
+    delegation:
+      mode: auto
+      triggers:
+        - "ROI"
+        - "cost analysis"
+        - "payback"
+        - "TCO"
+  migration-planner:
+    description: Plans migration from existing AI tools to Lyzr
+    delegation:
+      mode: auto
+      triggers:
+        - "migrate"
+        - "migration plan"
+        - "switch to Lyzr"
+        - "replace chatbot"
+  sales-enablement:
+    description: Generates demo scripts, executive briefs, and sales materials
+    delegation:
+      mode: auto
+      triggers:
+        - "demo script"
+        - "executive brief"
+        - "executive summary"
+        - "pitch"
+  implementation-planner:
+    description: Handles onboarding plans, integration mapping, compliance, and workflow design
+    delegation:
+      mode: auto
+      triggers:
+        - "onboarding plan"
+        - "integration map"
+        - "compliance"
+        - "workflow design"
+        - "implement"
