@@ -1,15 +1,17 @@
 # Architect
 
-The official gitagent assistant — an AI agent that helps you build, run, and manage AI agents with gitagent.
+Architect by Shreyas Kapale @ Lyzr — helps you build GitAgents. An AI agent that helps developers build, run, and manage AI agents using the gitagent framework.
 
-## Try It
+## Run
 
 ```bash
-# Run directly from GitHub
-gitagent run -r https://github.com/shreyaskapale/architect
+npx @open-gitagent/gitagent run -r https://github.com/shreyas-lyzr/architect
+```
 
-# Or with a prompt
-gitagent run -r https://github.com/shreyaskapale/architect -p "How do I create my first agent?"
+Or with a prompt:
+
+```bash
+npx @open-gitagent/gitagent run -r https://github.com/shreyas-lyzr/architect -p "How do I create my first agent?"
 ```
 
 ## What It Can Do
@@ -19,6 +21,7 @@ gitagent run -r https://github.com/shreyaskapale/architect -p "How do I create m
 - **Run agents** — Use any adapter (Claude, OpenAI, Lyzr, GitHub Models, etc.)
 - **Export & import** — Convert between gitagent and other frameworks
 - **Manage skills** — Search, install, create, and organize skills
+- **Register agents** — Submit agents to the gitagent registry at registry.gitagent.sh
 
 ## Skills
 
@@ -29,18 +32,12 @@ gitagent run -r https://github.com/shreyaskapale/architect -p "How do I create m
 | `run-agent` | All adapters, flags, caching, auto-detection |
 | `export-agent` | Export formats, import sources, conversion |
 | `manage-skills` | Search, install, create, discover skills |
-
-## Run Locally
-
-```bash
-git clone https://github.com/anthropics/gitagent-helper
-gitagent run -d ./gitagent-helper
-```
+| `register-agent` | Submit agents to the gitagent public registry |
 
 ## Structure
 
 ```
-gitagent-helper/
+architect/
 ├── agent.yaml
 ├── SOUL.md
 ├── RULES.md
@@ -49,8 +46,13 @@ gitagent-helper/
 │   ├── create-agent/
 │   ├── run-agent/
 │   ├── export-agent/
-│   └── manage-skills/
+│   ├── manage-skills/
+│   └── register-agent/
 └── knowledge/
     ├── index.yaml
     └── command-reference.md
 ```
+
+## Built with
+
+[gitagent](https://github.com/open-gitagent/gitagent) — a git-native, framework-agnostic open standard for AI agents.
